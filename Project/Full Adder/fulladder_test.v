@@ -18,15 +18,12 @@ initial begin
 		#10 a <= $random;
 		    b <= $random;
 		    cin <= $random;
-		$display("Decimal");
-		$display ("a = %0d b = %0d cin = %0d carry = %0d sum = %0d", a, b, cin, carry, sum);
-		$display("Binary");
-		$display("a = %0b b = %0b cin = %0b carry = %0b sum = %0b", a, b, cin, carry, sum);
 	end
 end
 initial begin
 	$monitor ("%t | a=%b | b=%b | cin=%b | sum=%b | carry=%b", $time, a, b, cin, sum, carry);
 	$dumpfile("fulladder.vcd");
 	$dumpvars();
+	$display("\t\ttime");
 end
 endmodule
