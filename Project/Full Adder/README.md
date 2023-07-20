@@ -1,6 +1,6 @@
 This folder contains the verilog code, testbench, and print out of the gtkwave for the 4 bit full adder. There are 2 implementations of this:
 * 4 bit Full Adder
-* 4 1 bit Adders
+* Full adder using half adders
 
 ### Steps to compile in iverilog
 ```
