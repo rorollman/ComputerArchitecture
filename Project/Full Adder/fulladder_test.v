@@ -5,7 +5,7 @@ wire [3:0] sum;
 wire carry;
 integer i;
 
-fulladder a0 (.a (a), .b (b), .cin (cin), .carry (carry), .sum (sum));
+fulladder_4b a0 (.a (a), .b (b), .cin (cin), .carry (carry), .sum (sum));
 
 initial begin
 	a <= 0;
