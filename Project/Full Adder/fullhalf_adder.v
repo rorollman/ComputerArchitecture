@@ -1,12 +1,12 @@
-module fulladder4b(input [3:0] a, b, input cin, output carry, output [3:0] sum);
-	wire [4:0] c;
+module fullhalfadder_4b(input [3:0] a, b, input cin, output carry, output [3:0] sum);
+	wire [4:0] x;
 	
-	fullhalf_adder fa1(a[0], b[0], cin, c[0], sum[0]);
-	fullhalf_adder fa2(a[1], b[1], c[0], c[1], sum[1]);
-	fullhalf_adder fa3(a[2], b[2], c[1], c[2], sum[2]);
-	fullhalf_adder fa4(a[3], b[3], c[2], c[3], sum[3]);
+	fullhalf_adder fa1(a[0], b[0], cin, x[0], sum[0]);
+	fullhalf_adder fa2(a[1], b[1], x[0], x[1], sum[1]);
+	fullhalf_adder fa3(a[2], b[2], x[1], x[2], sum[2]);
+	fullhalf_adder fa4(a[3], b[3], x[2], x[3], sum[3]);
 	
-	assign carry = c[3];
+	assign carry = x[3];
 
 endmodule
 

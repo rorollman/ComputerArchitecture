@@ -5,7 +5,7 @@ module fullhalf_adder_test;
 	wire carry;
 	integer i;
 
-	fulladder4b fa0(.a (a), .b (b), .cin (cin), .carry (carry), .sum (sum));
+	fullhalfadder_4b fa0(.a (a), .b (b), .cin (cin), .carry (carry), .sum (sum));
 
 	initial begin
 		a <= 0;
