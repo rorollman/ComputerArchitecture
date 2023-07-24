@@ -10,14 +10,13 @@ initial begin
 	b <= 0;
 	
 	//this section loops ten times to create random test cases
-	for (i = 0; i < 5; i = i + 1) begin
+	for (i = 0; i < 10; i = i + 1) begin
 		#10 a <= $random;
 		    b <= $random;
-		$display(" a = %d | b = %d | prod %d", a, b, prod);
 	end
 end
 initial begin
-	$monitor ("%t | a = %b | b = %b | prod = %b", $time, a, b, prod);
+	$monitor ("%t \n a = %b \n b = %b \n prod = %b", $time, a, b, prod);
 	$dumpfile("mult32b.vcd");
 	$dumpvars();
 	$display("\t\ttime");

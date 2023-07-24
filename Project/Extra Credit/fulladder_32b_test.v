@@ -1,4 +1,4 @@
-module fulladder_16b_test;
+module fulladder_32b_test;
 reg [31:0] a, b;
 wire [31:0] sum;
 wire carry;
@@ -18,7 +18,7 @@ initial begin
 	end
 end
 initial begin
-	$monitor ("%t | a=%b | b=%b | sum=%b | carry=%b", $time, a, b, 
+	$monitor ("%t \n a=%b \n b=%b \n sum=%b \n carry=%b", $time, a, b, 
 sum, carry);
 	$dumpfile("fulladder_32b.vcd");
 	$dumpvars();
