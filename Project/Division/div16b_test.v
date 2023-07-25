@@ -32,12 +32,11 @@ initial begin
          		shadow_quot = b ? a / b : infinity;
          		shadow_rem  = b ? a % b : a;
 
-        		$display("%t | a = %b | b = %b | quot = %b | rem = %b", $time, a, b, quot, rem);
+        		$display("%t \n a = %b \n b = %b \n quot = %b \n rem = %b", $time, a, b, quot, rem);
 		end
 	$stop;
 end
 initial begin
-	//$monitor ("%t | a = %b | b = %b | quot = %b | rem = %b", $time, a, b, quot, rem);
 	$dumpfile("div16b.vcd");
 	$dumpvars();
 	$display("\t\ttime");

@@ -1,7 +1,7 @@
 module div_test;
-wire [7:0] quot, rem;
-reg [7:0]  shadow_quot, shadow_rem;
-reg [7:0]  a, b;
+wire [31:0] quot, rem;
+reg [31:0]  shadow_quot, shadow_rem;
+reg [31:0]  a, b;
 integer    i;
 
 reg clk;
@@ -11,10 +11,10 @@ always #1 clk = ~clk;
 reg start;
 wire ready;
 
-wire [7:0] infinity;
-assign infinity = 16'hffff;
+wire [31:0] infinity;
+assign infinity = 32'hffff;
 
-div_8b d8(a,b,start, clk, quot, rem, ready);
+div_32b d32(a,b,start, clk, quot, rem, ready);
 
 initial begin
 	# 1;
@@ -32,12 +32,12 @@ initial begin
          		shadow_quot = b ? a / b : infinity;
          		shadow_rem  = b ? a % b : a;
 
-        		$display("%t | a = %b | b = %b | quot = %b | rem = %b", $time, a, b, quot, rem);
+        		$display("%t \n a = %b \n b = %b \n quot = %b \n rem = %b", $time, a, b, quot, rem);
 		end
 	$stop;
 end
 initial begin
-	$dumpfile("div8b.vcd");
+	$dumpfile("div32b.vcd");
 	$dumpvars();
 	$display("\t\ttime");
 end
